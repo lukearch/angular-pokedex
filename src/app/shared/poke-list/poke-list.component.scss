@@ -2,8 +2,10 @@
 
 :host {
   display: flex;
-
+  flex-wrap: wrap;
   gap: remc(20);
+  margin-bottom: remc(50);
+
   .pokemon {
     position: relative;
     display: flex;
@@ -12,13 +14,13 @@
     background-color: var(--white);
     border-radius: remc(10);
     height: remc(157);
-
+    color: var(--primary);
     &-status {
       h2 {
         font-size: remc(22);
         font-style: italic;
         font-weight: 700;
-
+        text-transform: capitalize;
         margin-bottom: remc(10);
       }
 
@@ -58,6 +60,7 @@
 
       img {
         width: remc(80);
+        height: remc(80);
       }
     }
   }
