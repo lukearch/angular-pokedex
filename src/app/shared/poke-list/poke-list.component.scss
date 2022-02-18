@@ -1,0 +1,64 @@
+@import "../../../config-scss/remc.scss";
+
+:host {
+  display: flex;
+
+  gap: remc(20);
+  .pokemon {
+    position: relative;
+    display: flex;
+    padding: remc(20);
+    width: 18.125rem;
+    background-color: var(--white);
+    border-radius: remc(10);
+    height: remc(157);
+
+    &-status {
+      h2 {
+        font-size: remc(22);
+        font-style: italic;
+        font-weight: 700;
+
+        margin-bottom: remc(10);
+      }
+
+      ul {
+        flex-direction: column;
+        display: flex;
+
+        li {
+          background-color: var(--gray);
+          border-radius: remc(32);
+          font-size: remc(12);
+          width: remc(65);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: remc(5);
+        }
+      }
+    }
+
+    &-image {
+      position: absolute;
+
+      right: remc(20);
+      bottom: remc(20);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      height: remc(90);
+      width: remc(110);
+
+      background: url("../../../assets/background/poke-background.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+
+      img {
+        width: remc(80);
+      }
+    }
+  }
+}
