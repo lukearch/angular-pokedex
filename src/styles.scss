@@ -1,0 +1,13 @@
+@import "./config-scss/remc.scss";
+@import "./config-scss/reset.scss";
+@import "./config-scss/variables.scss";
+
+html {
+  font-family: "Inter", sans-serif;
+  background-color: var(--primary);
+}
+
+main {
+  max-width: remc(600);
+  margin: 0 auto;
+}

@@ -1,0 +1,10 @@
+@import "../../../config-scss/remc.scss";
+
+:host {
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: remc(40) 0;
+  }
+}
