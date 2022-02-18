@@ -15,6 +15,13 @@
     border-radius: remc(10);
     height: remc(157);
     color: var(--primary);
+    transition: all 0.2s ease-out;
+
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    }
+
     &-status {
       h2 {
         font-size: remc(22);
@@ -34,9 +41,83 @@
           font-size: remc(12);
           width: remc(65);
           display: flex;
+          padding: remc(2);
           justify-content: center;
           align-items: center;
           margin-bottom: remc(5);
+          color: var(--white);
+
+          &.grass {
+            background-color: #b0cf77;
+          }
+
+          &.poison {
+            background-color: #907fa4;
+          }
+
+          &.fire {
+            background-color: #ff7171;
+          }
+
+          &.flying {
+            background-color: #5f939a;
+          }
+
+          &.ice {
+            background-color: #a7c5eb;
+          }
+
+          &.water {
+            background-color: #34626c;
+          }
+
+          &.dragon {
+            background-color: #5eaaa8;
+          }
+
+          &.bug {
+            background-color: #3a6351;
+          }
+
+          &.electric {
+            background-color: #eec373;
+          }
+
+          &.normal {
+            background-color: #c1a3a3;
+          }
+
+          &.fairy {
+            background-color: #ee9dbb;
+          }
+
+          &.psychic {
+            background-color: #ff87ca;
+          }
+
+          &.ghost {
+            background-color: #716f81;
+          }
+
+          &.fighting {
+            background-color: #ff8888;
+          }
+
+          &.ground {
+            background-color: #876445;
+          }
+
+          &.rock {
+            background-color: #865858;
+          }
+
+          &.steel {
+            background-color: #98ddca;
+          }
+
+          &.shadow {
+            background-color: var(--primary);
+          }
         }
       }
     }
