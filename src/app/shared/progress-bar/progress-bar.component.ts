@@ -1,12 +1,12 @@
-import { Component, HostBinding, Input, OnInit } from '@angular/core';
+import { Component, HostBinding, Input } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
-  selector: 'progress-bar',
+  selector: 'app-progress-bar',
   templateUrl: './progress-bar.component.html',
   styleUrls: ['./progress-bar.component.scss'],
 })
-export class ProgressBarComponent implements OnInit {
+export class ProgressBarComponent {
   @Input() label1: any = '';
   @Input() label2: any = '';
   @Input() progress: any = 0;
@@ -19,6 +19,4 @@ export class ProgressBarComponent implements OnInit {
   }
 
   constructor(private sanitizer: DomSanitizer) {}
-
-  ngOnInit(): void {}
 }

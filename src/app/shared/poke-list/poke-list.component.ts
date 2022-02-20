@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PokeApiService } from 'src/app/service/poke-api.service';
 
 @Component({
-  selector: 'poke-list',
+  selector: 'app-poke-list',
   templateUrl: './poke-list.component.html',
   styleUrls: ['./poke-list.component.scss'],
 })

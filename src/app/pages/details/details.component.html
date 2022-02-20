@@ -1,4 +1,4 @@
-<poke-header></poke-header>
+<app-poke-header></app-poke-header>
 
 <main>
   <ng-template [ngIf]="isLoading">
@@ -19,12 +19,12 @@
 
           <ol>
             <li *ngFor="let value of pokemon[0].stats">
-              <progress-bar
+              <app-progress-bar
                 class="progress"
                 [label1]="[value.stat.name]"
                 [label2]="[value.base_stat]"
                 [progress]="[value.base_stat]"
-              ></progress-bar>
+              ></app-progress-bar>
             </li>
           </ol>
         </article>
