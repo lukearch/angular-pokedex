@@ -1,0 +1,47 @@
+@import "../../../config-scss/remc.scss";
+
+:host {
+  .name {
+    margin-bottom: remc(5);
+  }
+
+  .d-flex {
+    display: flex;
+
+    div {
+      &:first-child {
+        flex-grow: 1;
+      }
+    }
+  }
+
+  .stat {
+    text-transform: capitalize;
+    font-weight: 600;
+  }
+
+  .base-stat {
+    font-weight: 700;
+    color: var(--secondary);
+  }
+
+  .flex-column {
+    flex-direction: column;
+  }
+
+  .bg-bar {
+    background: var(--primary);
+    width: 100%;
+    padding: remc(5);
+    border-radius: remc(32);
+
+    .progress-bar {
+      background: hsl(calc(var(--progress) * 1.2), 80%, 50%);
+      max-width: 100%;
+      height: remc(15);
+      border-radius: remc(32);
+      transition: all 0.2s ease-out;
+      width: 44%;
+    }
+  }
+}
