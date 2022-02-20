@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { forkJoin } from 'rxjs';
 import { PokeApiService } from 'src/app/service/poke-api.service';
@@ -18,11 +19,16 @@ export class DetailsComponent implements OnInit {
 
   constructor(
     private activatedRoute: ActivatedRoute,
-    private pokeApiService: PokeApiService
+    private pokeApiService: PokeApiService,
+    private titleHandler: Title
   ) {}
 
   ngOnInit(): void {
     this.getPokemon;
+  }
+
+  public capitalizeFirstLetter(value: string) {
+    return value.charAt(0).toUpperCase() + value.slice(1);
   }
 
   get getPokemon() {
@@ -37,6 +43,9 @@ export class DetailsComponent implements OnInit {
     return forkJoin([pokemon, species]).subscribe(
       (res: any) => {
         this.pokemon = res;
+        this.titleHandler.setTitle(
+          `Pokedex | ${this.capitalizeFirstLetter(this.pokemon[0].name)}`
+        );
         this.isLoading = true;
       },
       (error) => {
