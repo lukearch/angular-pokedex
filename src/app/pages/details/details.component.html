@@ -1,34 +1,43 @@
 <poke-header></poke-header>
 
 <main>
-  <div class="pokemon-name">
-    <h1>{{ pokemon[0].name }}</h1>
-    <h2>{{ pokemon[1].names[0].name }}</h2>
-  </div>
-
-  <div class="pokemon-status">
-    <img
-      [src]="pokemon[0].sprites.other.dream_world.front_default"
-      [alt]="pokemon[0].name"
-    />
-
-    <div class="pokemon-status-statistics">
-      <article>
-        <h3>Estatísticas</h3>
-
-        <ol>
-          <li *ngFor="let value of pokemon[0].stats">
-            <progress-bar
-              class="progress"
-              [label1]="[value.stat.name]"
-              [label2]="[value.base_stat]"
-              [progress]="[value.base_stat]"
-            ></progress-bar>
-          </li>
-        </ol>
-      </article>
-
-      <a [routerLink]="['']" class="btn">Voltar</a>
+  <ng-template [ngIf]="isLoading">
+    <div class="pokemon-name">
+      <h1>{{ pokemon[0].name }}</h1>
+      <h2>{{ pokemon[1].names[0].name }}</h2>
     </div>
-  </div>
+
+    <div class="pokemon-status">
+      <img
+        [src]="pokemon[0].sprites.other.dream_world.front_default"
+        [alt]="pokemon[0].name"
+      />
+
+      <div class="pokemon-status-statistics">
+        <article>
+          <h3>Estatísticas</h3>
+
+          <ol>
+            <li *ngFor="let value of pokemon[0].stats">
+              <progress-bar
+                class="progress"
+                [label1]="[value.stat.name]"
+                [label2]="[value.base_stat]"
+                [progress]="[value.base_stat]"
+              ></progress-bar>
+            </li>
+          </ol>
+        </article>
+
+        <a [routerLink]="['']" class="btn">Voltar</a>
+      </div>
+    </div>
+  </ng-template>
+  <ng-template [ngIf]="apiError">
+    <img
+      src="assets/error.svg"
+      alt="Deu erro na mostragem do pokemon"
+      width="100%"
+    />
+  </ng-template>
 </main>
