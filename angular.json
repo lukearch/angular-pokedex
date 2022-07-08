@@ -118,6 +118,7 @@
   },
   "defaultProject": "pokedex-angular",
   "cli": {
+    "analytics": false,
     "defaultCollection": "@angular-eslint/schematics"
   }
 }
